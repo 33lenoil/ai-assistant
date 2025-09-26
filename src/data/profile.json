@@ -1,0 +1,132 @@
+{
+  "name": "Lionel Hu",
+  "titles": ["Software Engineer", "Full-stack Developer", "AI Applications"],
+  "education": [
+    {
+      "school": "University of Pennsylvania",
+      "degree": "M.S.E. in Computer and Information Science",
+      "gpa": "3.90/4.00",
+      "start": "2023-08",
+      "end": "2025-05",
+      "location": "Philadelphia, PA"
+    },
+    {
+      "school": "Rice University",
+      "degree": "B.A. in Computer Science",
+      "gpa": "3.70/4.00",
+      "start": "2019-08",
+      "end": "2023-05",
+      "location": "Houston, TX"
+    }
+  ],
+  "skills": {
+    "programming": [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "SQL",
+      "Object-Oriented Programming",
+      "RESTful API"
+    ],
+    "web": [
+      "HTML",
+      "JavaScript/TypeScript",
+      "CSS",
+      "React",
+      "Next.js (App Router)",
+      "Tailwind",
+      "NextUI",
+      "HeroUI"
+    ],
+    "backend": ["Node.js", "Express.js", "Firebase/Firestore", "Supabase/Postgres"],
+    "data": ["Pandas", "MongoDB", "MySQL", "Oracle", "Neo4j", "AWS"],
+    "ai": ["ChatGPT", "LangChain", "PyTorch", "Groq (LLaMA)", "Prompt Engineering", "MCP"],
+    "tools": ["GitHub", "LaTeX", "Figma", "Azure DevOps Server", "Jest", "JUnit", "Cypress"]
+  },
+  "experience": [
+    {
+      "company": "HeartByte Inc (YC Startup for Gen-AI Interactive Story)",
+      "role": "Software Engineer",
+      "location": "San Mateo, CA",
+      "start": "2025-06",
+      "end": null,
+      "bullets": [
+        "Built a Gen-AI interactive story web app using React, Next.js, and Firebase serving 10K+ users monthly.",
+        "Designed a branching visual-novel engine with manual/auto save and authoring experience for 1K+ stories.",
+        "Re-architected 10+ core pages with rendering migration, API redesign, and database schema redesign, improving web vitals by 20%.",
+        "Designed a numeric stats system enabling conditional branching and personalized endings.",
+        "Shipped an LLM story-generation pipeline (Groq + JSON schema validation/repair) integrated into a multi-step authoring flow."
+      ]
+    },
+    {
+      "company": "HeartByte Inc",
+      "role": "Software Engineer Intern",
+      "location": "San Francisco, CA (Remote)",
+      "start": "2024-05",
+      "end": "2025-05",
+      "bullets": [
+        "Spearheaded SEO initiatives with structured metadata, boosting organic traffic by 5X.",
+        "Developed 10+ full-stack features including story recommendation with React, Next.js, and Firebase.",
+        "Standardized UI across 15+ pages using Tailwind CSS and NextUI, improving consistency and development speed."
+      ]
+    },
+    {
+      "company": "YelpScout (UPenn)",
+      "role": "Software Engineer",
+      "location": "Philadelphia, PA",
+      "start": "2024-01",
+      "end": "2024-05",
+      "bullets": [
+        "Engineered a local business search & insights app with React, Node/Express, and MySQL in a 4-person team.",
+        "Built single-business analytics pages for 150K+ businesses with keyword extraction and popularity metrics.",
+        "Optimized heavy queries with indexes and cached tables, reducing query time from minutes to 1–3s."
+      ]
+    },
+    {
+      "company": "DocSearch (UPenn)",
+      "role": "Software Engineer",
+      "location": "Philadelphia, PA",
+      "start": "2023-09",
+      "end": "2023-12",
+      "bullets": [
+        "Built an end-to-end search engine (crawler, KVS, indexer, ranking, web UI, EC2) in a 4-person team.",
+        "Implemented distributed KVS in Java with concurrent processing for 400K+ crawled pages.",
+        "Designed crawl frontier policies with allowlist filtering, quotas, and guards for efficiency and relevance."
+      ]
+    },
+    {
+      "company": "UFOgram (UPenn)",
+      "role": "Software Engineer",
+      "location": "Philadelphia, PA",
+      "start": "2023-09",
+      "end": "2023-12",
+      "bullets": [
+        "Developed features for a media-sharing web app enabling real-time UFO sighting reports and image uploads.",
+        "Built full-stack functionality with React, Node/Express, and Firebase to support dynamic content sharing.",
+        "Implemented core APIs and optimized Firestore queries to improve responsiveness and scalability."
+      ]
+    }
+  ],
+  "links": {
+    "resume": "/Lionel_Hu_Resume.pdf",
+    "github": "https://github.com/33lenoil",
+    "linkedin": "https://www.linkedin.com/in/lionel-hu/",
+    "portfolio": "https://33lenoil.github.io/",
+    "company": "https://www.storioai.com/"
+  },
+  "faqs": [
+    {
+      "q": "What are your strongest skills?",
+      "a": "React, Next.js, and TypeScript."
+    },
+    {
+      "q": "What projects have you worked on?",
+      "a": "Notable ones include UFOgram, DocSearch, YelpScout, and the Storio interactive novel engine."
+    },
+    {
+      "q": "How can I contact you?",
+      "a": "Check my LinkedIn or resume link, or email me at lionelhu33@gmail.com."
+    }
+  ]
+}

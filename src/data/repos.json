@@ -1,0 +1,32 @@
+[
+  {
+    "id": "yelp-scout",
+    "name": "YelpScout",
+    "url": "https://github.com/33lenoil/YelpScouts",
+    "tags": ["nextjs", "mysql", "analytics", "business-search"]
+  },
+  {
+    "id": "gmail-clone",
+    "name": "Gmail Google Cloud Clone",
+    "url": "https://github.com/33lenoil/gmail-google-cloud-clone",
+    "tags": ["clone", "gmail", "google-cloud", "firebase"]
+  },
+  {
+    "id": "docsearch",
+    "name": "DocSearch",
+    "url": "https://github.com/33lenoil/DocSearch",
+    "tags": ["search", "crawler", "indexer", "ranking"]
+  },
+  {
+    "id": "ufogram",
+    "name": "UFOgram",
+    "url": "https://github.com/33lenoil/ufogram",
+    "tags": ["react", "firebase", "image-sharing", "real-time"]
+  },
+  {
+    "id": "ai-assistant",
+    "name": "AI Assistant",
+    "url": "https://github.com/33lenoil/ai-assistant",
+    "tags": ["nextjs", "ai", "chatbot", "personal-agent"]
+  }
+]
