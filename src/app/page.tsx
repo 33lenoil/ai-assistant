@@ -1,8 +1,28 @@
 "use client";
 
-import { Button, Card, CardBody, Link, Textarea } from "@heroui/react";
-import { ArrowTopRightOnSquareIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import {
+  Button,
+  Card,
+  CardBody,
+  Link,
+  Textarea,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+  Switch,
+} from "@heroui/react";
+import {
+  ArrowTopRightOnSquareIcon,
+  PaperAirplaneIcon,
+  SunIcon,
+  MoonIcon,
+} from "@heroicons/react/24/outline";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 import { sendToChatAPI } from "@/lib/chat";
 
 const CLIENT_MESSAGE_CAP = 12; // local cap to mirror server
@@ -20,8 +40,15 @@ export default function Home() {
   const [error, setError] = useState<string | null>(null);
   const [input, setInput] = useState("");
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const isLoading = status === "loading";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // enforce a local cap so we don't grow unbounded on the client
   const cappedMessages = useMemo(
@@ -88,44 +115,119 @@ export default function Home() {
 
   const ask = (q: string) => setInput(q);
 
+  const menuItems = [
+    { name: "Resume", href: "/Lionel_Hu_Resume.pdf", external: true },
+    { name: "GitHub", href: "https://github.com/33lenoil", external: true },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/lionel-hu/", external: true },
+    { name: "Portfolio", href: "https://33lenoil.github.io/", external: true },
+  ];
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Header */}
-      <header className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
-        <div className="mx-auto flex h-16 max-w-4xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <h1 className="text-xl font-semibold text-gray-900 dark:text-white">
-            Lionel’s AI Assistant
-          </h1>
-          <nav className="flex items-center gap-3 text-sm">
-            <Link href="/Lionel_Hu_Resume.pdf" target="_blank" rel="noopener noreferrer">
+    <div className="min-h-screen bg-background">
+      {/* Navbar */}
+      <Navbar 
+        isBordered 
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+      >
+        {/* Mobile menu toggle - only visible on screens smaller than lg */}
+        <NavbarContent className="lg:hidden" justify="start">
+          <NavbarMenuToggle />
+        </NavbarContent>
+
+        {/* Brand - always visible */}
+        <NavbarBrand>
+          <h1 className="text-xl font-semibold text-foreground">Lionel's AI Assistant</h1>
+        </NavbarBrand>
+
+        {/* Desktop navigation - only visible on lg screens and larger */}
+        <NavbarContent className="hidden lg:flex gap-4" justify="center">
+          <NavbarItem>
+            <Link
+              href="/Lionel_Hu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="foreground"
+            >
               Resume
             </Link>
-            <Link href="https://github.com/33lenoil" target="_blank" rel="noopener noreferrer">
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              href="https://github.com/33lenoil"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="foreground"
+            >
               GitHub
             </Link>
+          </NavbarItem>
+          <NavbarItem>
             <Link
               href="https://www.linkedin.com/in/lionel-hu/"
               target="_blank"
               rel="noopener noreferrer"
+              color="foreground"
             >
               LinkedIn
             </Link>
-            <Link href="https://33lenoil.github.io/" target="_blank" rel="noopener noreferrer">
+          </NavbarItem>
+          <NavbarItem>
+            <Link
+              href="https://33lenoil.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              color="foreground"
+            >
               Portfolio
             </Link>
-          </nav>
-        </div>
-      </header>
+          </NavbarItem>
+        </NavbarContent>
+
+        {/* Theme toggle - always visible on the right */}
+        <NavbarContent justify="end">
+          <NavbarItem>
+            {mounted && (
+              <Switch
+                isSelected={theme === "dark"}
+                onValueChange={(isSelected) => setTheme(isSelected ? "dark" : "light")}
+                size="lg"
+                color="primary"
+                startContent={<SunIcon className="h-4 w-4" />}
+                endContent={<MoonIcon className="h-4 w-4" />}
+              />
+            )}
+          </NavbarItem>
+        </NavbarContent>
+
+        {/* Mobile menu - only visible when menu is open on screens smaller than lg */}
+        <NavbarMenu>
+          {menuItems.map((item, index) => (
+            <NavbarMenuItem key={`${item.name}-${index}`}>
+              <Link
+                className="w-full"
+                color="foreground"
+                href={item.href}
+                size="lg"
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+              >
+                {item.name}
+              </Link>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
 
       {/* Main */}
       <main className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-8 space-y-6">
         {cappedMessages.length === 0 && (
           <div className="text-center">
-            <h2 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
-              Hi! I&apos;m your personal AI assistant.
+            <h2 className="mb-2 text-2xl font-bold text-foreground">
+              Hi! I&apos;m Lionel&apos;s personal AI assistant.
             </h2>
-            <p className="text-gray-600 dark:text-gray-300">
-              Ask me about Lionel’s background, skills, experience, or projects.
+            <p className="text-default-500">
+              Ask me about Lionel's background, skills, experience, or projects.
             </p>
           </div>
         )}
@@ -136,7 +238,7 @@ export default function Home() {
             <div ref={chatContainerRef} className="h-full overflow-y-auto p-6">
               <div className="flex flex-col gap-4 min-h-full">
                 {cappedMessages.length === 0 ? (
-                  <div className="flex flex-1 items-center justify-center text-center text-gray-500 dark:text-gray-400">
+                  <div className="flex flex-1 items-center justify-center text-center text-default-500">
                     <div>
                       <p className="text-lg mb-2">Start a conversation</p>
                       <p className="text-sm">Try asking:</p>
@@ -178,15 +280,13 @@ export default function Home() {
                         >
                           <div
                             className={`max-w-[80%] rounded-lg px-4 py-2 ${
-                              isUser
-                                ? "bg-primary text-primary-foreground"
-                                : "bg-gray-100 dark:bg-gray-700"
+                              isUser ? "bg-primary text-primary-foreground" : "bg-default-100"
                             }`}
                           >
                             {!!text && (
                               <p
                                 className={`whitespace-pre-wrap ${
-                                  isUser ? "text-white" : "text-gray-800 dark:text-gray-200"
+                                  isUser ? "text-primary-foreground" : "text-foreground"
                                 }`}
                               >
                                 {text}
@@ -223,17 +323,17 @@ export default function Home() {
                     {/* Typing / loading indicator */}
                     {isLoading && (
                       <div className="flex justify-start">
-                        <div className="rounded-lg bg-gray-100 px-4 py-2 dark:bg-gray-700">
+                        <div className="rounded-lg bg-default-100 px-4 py-2">
                           <div className="flex gap-1">
-                            <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400"></div>
-                            <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:0.1s]"></div>
-                            <div className="h-2 w-2 animate-bounce rounded-full bg-gray-400 [animation-delay:0.2s]"></div>
+                            <div className="h-2 w-2 animate-bounce rounded-full bg-default-400"></div>
+                            <div className="h-2 w-2 animate-bounce rounded-full bg-default-400 [animation-delay:0.1s]"></div>
+                            <div className="h-2 w-2 animate-bounce rounded-full bg-default-400 [animation-delay:0.2s]"></div>
                           </div>
                         </div>
                       </div>
                     )}
 
-                    {error && <div className="text-sm text-red-600">{error}</div>}
+                    {error && <div className="text-sm text-danger">{error}</div>}
                   </div>
                 )}
               </div>
@@ -270,13 +370,13 @@ export default function Home() {
                 <PaperAirplaneIcon className="h-5 w-5" />
               </Button>
             </form>
-            <div className="mt-2 text-right text-xs text-gray-500">
+            <div className="mt-2 text-right text-xs text-default-500">
               History limited to last {CLIENT_MESSAGE_CAP} messages.
             </div>
           </CardBody>
         </Card>
 
-        <div className="pt-2 text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="pt-2 text-center text-sm text-default-500">
           Powered by AI • Built by Lionel Hu
         </div>
       </main>

@@ -1,9 +1,12 @@
 /* Tailwind v4 base */
 @import "tailwindcss";
 
+/* establish layers for Tailwind v4 */
+@layer theme, base, components, utilities;
+
 /* Load the HeroUI Tailwind plugin (via the shim we created at project root) */
 @plugin "../../hero.ts";
 
-/* (optional) your own globals below */
-:root {
-}
+/* Let Tailwind scan HeroUI’s theme files inside node_modules
+IMPORTANT: adjust the relative path if your globals.css lives elsewhere */
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
