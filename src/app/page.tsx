@@ -125,11 +125,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navbar */}
-      <Navbar 
-        isBordered 
-        isMenuOpen={isMenuOpen}
-        onMenuOpenChange={setIsMenuOpen}
-      >
+      <Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
         {/* Mobile menu toggle - only visible on screens smaller than lg */}
         <NavbarContent className="lg:hidden" justify="start">
           <NavbarMenuToggle />
@@ -137,7 +133,7 @@ export default function Home() {
 
         {/* Brand - always visible */}
         <NavbarBrand>
-          <h1 className="text-xl font-semibold text-foreground">Lionel's AI Assistant</h1>
+          <h1 className="text-xl font-semibold text-foreground">Lionel&apos;s AI Assistant</h1>
         </NavbarBrand>
 
         {/* Desktop navigation - only visible on lg screens and larger */}
@@ -227,7 +223,7 @@ export default function Home() {
               Hi! I&apos;m Lionel&apos;s personal AI assistant.
             </h2>
             <p className="text-default-500">
-              Ask me about Lionel's background, skills, experience, or projects.
+              Ask me about Lionel&apos;s background, skills, experience, or projects.
             </p>
           </div>
         )}
@@ -248,14 +244,14 @@ export default function Home() {
                           variant="flat"
                           onPress={() => ask("What are your strongest skills?")}
                         >
-                          &quot;What are your strongest skills?&quot;
+                          &quot;What are Lionel&apos;s strongest skills?&quot;
                         </Button>
                         <Button
                           size="sm"
                           variant="flat"
                           onPress={() => ask("Summarize your HeartByte experience.")}
                         >
-                          &quot;Summarize your HeartByte experience.&quot;
+                          &quot;Summarize Lionel&apos;s HeartByte experience.&quot;
                         </Button>
                         <Button
                           size="sm"
