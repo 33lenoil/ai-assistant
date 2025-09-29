@@ -2,7 +2,7 @@
 
 import { Button, Card, CardBody, Link, Chip } from "@heroui/react";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
 import NavbarComponent from "../components/navbar";
 import ChatButton from "../components/chat-button";
@@ -116,6 +116,11 @@ const skillsData = {
         "https://img.shields.io/badge/Next.js-000000?logo=nextdotjs&logoColor=white&style=for-the-badge",
     },
     {
+      name: "Vercel",
+      badge:
+        "https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge",
+    },
+    {
       name: "Tailwind CSS",
       badge:
         "https://img.shields.io/badge/Tailwind_CSS-06B6D4?logo=tailwindcss&logoColor=white&style=for-the-badge",
@@ -144,11 +149,6 @@ const skillsData = {
     },
   ],
   "Cloud & DevOps": [
-    {
-      name: "Vercel",
-      badge:
-        "https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge",
-    },
     {
       name: "AWS",
       badge:

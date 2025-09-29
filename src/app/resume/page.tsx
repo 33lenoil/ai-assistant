@@ -7,7 +7,7 @@ import {
   WrenchScrewdriverIcon,
   DocumentArrowDownIcon,
 } from "@heroicons/react/24/outline";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import NavbarComponent from "@/components/navbar";
 import ChatButton from "@/components/chat-button";
 
@@ -54,15 +54,13 @@ const skillsData = {
   "Programming & Software Design":
     "Python, Java, C, C++, SQL, Object-Oriented Programming, RESTful API",
   "Web Development":
-    "HTML, JavaScript/TypeScript, CSS, React, Node.js, Express.js, Next.js, Tailwind, HeroUI, Figma",
+    "HTML, JavaScript/TypeScript, CSS, React, Node.js, Express.js, Next.js, Vercel, Tailwind, HeroUI, Figma",
   "Data & Databases": "Pandas, MongoDB, Firestore, MySQL, Oracle, Neo4j, AWS",
   "Machine Learning & AI": "ChatGPT, LangChain, PyTorch, Groq, Prompt Engineering, MCP",
   Tools: "GitHub, LaTeX, Firebase, Azure DevOps Server, Jest, JUnit, Cypress",
 };
 
 export default function ResumePage() {
-  const [mounted] = useState(false);
-
   useEffect(() => {
     // Component mounted
   }, []);
