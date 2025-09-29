@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Lionel's AI Assistant",
+  title: "Lionel Hu | Portfolio",
   description:
-    "Personal AI assistant for Lionel Hu. Ask questions about his background, experience, projects, and professional journey.",
+    "Software Engineer specializing in full-stack development, AI integration, and data engineering. Explore my projects, experience, and skills.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
