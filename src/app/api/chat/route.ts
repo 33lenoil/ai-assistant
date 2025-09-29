@@ -42,7 +42,7 @@ function truncateHistory(messages: ClientMessage[]) {
   return result;
 }
 
-function buildSystemPrompt(profile: any) {
+function buildSystemPrompt(profile: never) {
   return `
 You are Lionel Hu's professional AI assistant. You are to answer questions for Lionel, but don't act like you are Lionel.
 Be friendly and professional, don't just be a robot.
@@ -122,7 +122,7 @@ export async function POST(req: NextRequest) {
       )
     );
 
-    const profile = await readJson<any>("src/data/profile.json");
+    const profile = await readJson<never>("src/data/profile.json");
     const repos = await readJson<RepoItem[]>("src/data/repos.json");
 
     const systemPrompt = buildSystemPrompt(profile);
@@ -161,7 +161,7 @@ export async function POST(req: NextRequest) {
     }
 
     return NextResponse.json({ text: finalText, repoLinks }, { status: 200 });
-  } catch (err: any) {
+  } catch (err: unknown) {
     console.error("/api/chat error:", err);
     return NextResponse.json(
       { text: "Server error. Please try again.", repoLinks: [] },

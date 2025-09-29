@@ -15,7 +15,6 @@ interface ContactForm {
 }
 
 export default function ContactPage() {
-  const [mounted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<ContactForm>({
     name: "",

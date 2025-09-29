@@ -179,12 +179,6 @@ const projectHighlights = [
 ];
 
 export default function AboutPage() {
-  const [mounted] = useState(false);
-
-  useEffect(() => {
-    // Component mounted
-  }, []);
-
   return (
     <div className="min-h-screen bg-background relative">
       {/* Floating Chat Button */}
