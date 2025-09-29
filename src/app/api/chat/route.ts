@@ -1,8 +1,9 @@
 // app/api/chat/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-import fs from "node:fs/promises";
-import path from "node:path";
+import rawProfile from "@/data/profile.json";
+import rawRepos from "@/data/repos.json";
+import type { Profile, RepoItem } from "@/types/profile";
 
 export const runtime = "nodejs";
 
@@ -18,15 +19,7 @@ type ClientMessage = {
   content: string;
 };
 
-type RepoItem = { name: string; url: string; tags?: string[] };
-
 // --- helpers ----
-
-async function readJson<T>(relPath: string): Promise<T> {
-  const abs = path.join(process.cwd(), relPath);
-  const raw = await fs.readFile(abs, "utf-8");
-  return JSON.parse(raw) as T;
-}
 
 function truncateHistory(messages: ClientMessage[]) {
   // Keep last N and cap total chars
@@ -42,7 +35,7 @@ function truncateHistory(messages: ClientMessage[]) {
   return result;
 }
 
-function buildSystemPrompt(profile: never) {
+function buildSystemPrompt(profile: Profile) {
   return `
 You are Lionel Hu's professional AI assistant. You are to answer questions for Lionel, but don't act like you are Lionel.
 Be friendly and professional, don't just be a robot.
@@ -122,8 +115,9 @@ export async function POST(req: NextRequest) {
       )
     );
 
-    const profile = await readJson<never>("src/data/profile.json");
-    const repos = await readJson<RepoItem[]>("src/data/repos.json");
+    // Statically-typed JSON (pre-bundled by Next/Vercel)
+    const profile = rawProfile as Profile;
+    const repos = rawRepos as RepoItem[];
 
     const systemPrompt = buildSystemPrompt(profile);
 
