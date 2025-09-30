@@ -124,7 +124,7 @@ const projectsData: Project[] = [
       "MVP Architecture",
     ],
     link: "https://ufogram-frontend.fly.dev",
-    icon: "👽",
+    icon: "🛸",
     gradient: "from-purple-500 to-pink-500",
     features: [
       "Real-time social feed updates",
@@ -138,14 +138,9 @@ const projectsData: Project[] = [
 const categories = ["All", "Data Engineering", "Web Applications"];
 
 export default function PortfolioPage() {
-  const [mounted] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
-
-  useEffect(() => {
-    // Component mounted
-  }, []);
 
   const filteredProjects =
     selectedCategory === "All"

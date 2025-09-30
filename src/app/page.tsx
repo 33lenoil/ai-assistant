@@ -172,10 +172,10 @@ const skillsData = {
 };
 
 const projectHighlights = [
-  "🔍 DocSearch — End-to-end web search engine (crawler → indexing → TF-IDF + PageRank → ranking UI)",
-  "📧 Google Suite Copy — Gmail-style webmail + Drive-style cloud storage (not affiliated with Google)",
-  "🏪 yelpscout — Yelp-dataset local business search & insights with Top-100 ranking and recommendations",
-  "👽 UFOgram — Social app MVP with real-time feed, profiles, and infinite scroll",
+  "DocSearch — End-to-end web search engine (crawler → indexing → TF-IDF + PageRank → ranking UI)",
+  "Google Suite Copy — Gmail-style webmail + Drive-style cloud storage (not affiliated with Google)",
+  "yelpscout — Yelp-dataset local business search & insights with Top-100 ranking and recommendations",
+  "UFOgram — Social app MVP with real-time feed, profiles, and infinite scroll",
 ];
 
 export default function AboutPage() {
@@ -233,44 +233,44 @@ export default function AboutPage() {
 
             <div className="space-y-4 text-foreground">
               <p>
-                👋 Hi, I&apos;m <strong>Lionel Hu</strong>, a passionate software engineer
-                specializing in full-stack and frontend development. I work at{" "}
+                Hi, I&apos;m <strong>Lionel Hu</strong>, a passionate software engineer specializing
+                in full-stack and frontend development. I work at{" "}
                 <strong>HeartByte (Storio)</strong> on a Gen-AI interactive story web app built with{" "}
                 <strong>Next.js + TypeScript + Firebase/Firestore</strong>.
               </p>
 
               <div>
-                <p className="font-semibold">🎓 Education</p>
+                <p className="font-semibold">Education</p>
                 <ul className="list-disc list-inside ml-4 space-y-1">
                   <li>
-                    📚 <strong>MSE in Computer and Information Science</strong> – University of
+                    <strong>MSE in Computer and Information Science</strong> – University of
                     Pennsylvania (GPA: 3.90/4.00)
                   </li>
                   <li>
-                    🎓 <strong>BA in Computer Science</strong> – Rice University (GPA: 3.70/4.00)
+                    <strong>BA in Computer Science</strong> – Rice University (GPA: 3.70/4.00)
                   </li>
                 </ul>
               </div>
 
               <div>
-                <p className="font-semibold">🔹 Work Experience</p>
+                <p className="font-semibold">Work Experience</p>
                 <ul className="list-disc list-inside ml-4 space-y-1">
                   <li>
-                    🚀 <strong>HeartByte (Storio) | Software Engineer</strong> – Building a Gen-AI
+                    <strong>HeartByte (Storio) | Software Engineer</strong> – Building a Gen-AI
                     interactive story web app with branching visual-novel engine, LLM story
                     pipelines, and production features end-to-end.
                   </li>
                   <li>
-                    ⚡ <strong>Recent Projects</strong> – Built end-to-end web search engine,
+                    <strong>Recent Projects</strong> – Built end-to-end web search engine,
                     Gmail/Drive-style suite, and yelpscout business insights app.
                   </li>
                 </ul>
               </div>
 
               <p>
-                💡 I love building scalable web applications and exploring the intersection of AI
-                and software engineering. I&apos;m passionate about creating user experiences that
-                are both functional and engaging.
+                I love building scalable web applications and exploring the intersection of AI and
+                software engineering. I&apos;m passionate about creating user experiences that are
+                both functional and engaging.
               </p>
             </div>
           </CardBody>
