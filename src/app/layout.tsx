@@ -15,29 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// Generate metadata for the home page
-export const metadata = {
-  title: "Lionel Hu - Software Engineer & Full-Stack Developer",
+export const metadata: Metadata = {
+  title: "Lionel Hu | Portfolio",
   description:
-    "Software Engineer specializing in full-stack development, Gen-AI integration, and data engineering. Currently at HeartByte building interactive story applications with React, Next.js, and Firebase.",
-  keywords: [
-    "Software Engineer",
-    "Full-Stack Developer",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "Firebase",
-    "Gen-AI",
-    "Data Engineering",
-    "Web Development",
-  ],
-  openGraph: {
-    title: "Lionel Hu - Software Engineer & Full-Stack Developer",
-    description:
-      "Software Engineer specializing in full-stack development, Gen-AI integration, and data engineering.",
-    type: "website",
-    locale: "en_US",
-  },
+    "Software Engineer specializing in full-stack development, AI integration, and data engineering. Explore my projects, experience, and skills.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
