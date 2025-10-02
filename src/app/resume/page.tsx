@@ -5,11 +5,12 @@ import ResumeClient from "./client";
 const skillsData = {
   "Programming & Software Design":
     "Python, Java, C, C++, SQL, Object-Oriented Programming, RESTful API",
-  "Web Development":
-    "HTML, JavaScript/TypeScript, CSS, React, Node.js, Express.js, Next.js, Vercel, Tailwind, HeroUI, Figma",
-  "Data & Databases": "Pandas, MongoDB, Firestore, MySQL, Oracle, Neo4j, AWS",
+  "Web Dev":
+    "HTML, JavaScript/TypeScript, CSS, React, Node.js, Express.js, Next.js, Tailwind, HeroUI, Figma, Vercel",
+  Cloud: "GCP, AWS, Firestore, EC2, S3",
   "Machine Learning & AI": "ChatGPT, LangChain, PyTorch, Groq, Prompt Engineering, MCP",
-  Tools: "GitHub, LaTeX, Firebase, Azure DevOps Server, Jest, JUnit, Cypress",
+  "Tools & Data":
+    "GitHub, LaTeX, Firebase, Jest, JUnit, Cypress, Pandas, MongoDB, MySQL, Oracle, Neo4j",
 };
 
 export default function ResumePage() {
