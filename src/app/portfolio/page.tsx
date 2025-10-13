@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarComponent from "@/components/navbar";
 import PortfolioClient from "./client";
+import ChatButton from "@/components/chat-button";
 
 interface Project {
   id: string;
@@ -116,6 +117,9 @@ const categories = ["All", "Data Engineering", "Web Applications"];
 export default function PortfolioPage() {
   return (
     <div className="min-h-screen bg-background relative">
+      {/* Floating Chat Button */}
+      <ChatButton />
+
       {/* Navbar */}
       <NavbarComponent currentPage="portfolio" />
 

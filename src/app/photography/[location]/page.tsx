@@ -3,6 +3,7 @@ import { Link } from "@heroui/react";
 import NavbarComponent from "../../../components/navbar";
 import LocationClient from "./client";
 import { locationData } from "../../../data/locations";
+import ChatButton from "@/components/chat-button";
 
 interface PhotographyLocationPageProps {
   params: Promise<{ location: string }>;
@@ -28,6 +29,9 @@ export default async function PhotographyLocationPage({ params }: PhotographyLoc
 
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
+      {/* Floating Chat Button */}
+      <ChatButton />
+
       {/* Navbar */}
       <NavbarComponent currentPage="photography" />
 

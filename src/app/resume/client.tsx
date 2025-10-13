@@ -8,7 +8,6 @@ import {
   DocumentArrowDownIcon,
 } from "@heroicons/react/24/outline";
 import { useEffect } from "react";
-import ChatButton from "@/components/chat-button";
 
 const TimelineItem = ({
   title,
@@ -60,9 +59,6 @@ export default function ResumeClient({ skillsData }: ResumeClientProps) {
 
   return (
     <>
-      {/* Floating Chat Button */}
-      <ChatButton />
-
       {/* Main Content */}
       <main className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* Header */}

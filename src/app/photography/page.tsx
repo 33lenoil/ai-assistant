@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarComponent from "../../components/navbar";
 import PhotographyClient from "./client";
+import ChatButton from "@/components/chat-button";
 
 interface PhotoLocation {
   id: string;
@@ -152,6 +153,9 @@ const photoLocations: PhotoLocation[] = [
 export default function PhotographyPage() {
   return (
     <div className="min-h-screen bg-background relative overflow-x-hidden">
+      {/* Floating Chat Button */}
+      <ChatButton />
+
       {/* Navbar */}
       <NavbarComponent currentPage="photography" />
 

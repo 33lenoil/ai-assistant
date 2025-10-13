@@ -18,7 +18,6 @@ import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import ChatButton from "../../../components/chat-button";
 import { LocationData } from "../../../data/locations";
 
 interface LocationClientProps {
@@ -105,9 +104,6 @@ export default function LocationClient({ location }: LocationClientProps) {
 
   return (
     <>
-      {/* Floating Chat Button */}
-      <ChatButton />
-
       {/* Main Content */}
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-8 overflow-x-hidden">
         {/* Back Navigation */}

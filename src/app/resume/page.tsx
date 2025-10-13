@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarComponent from "@/components/navbar";
 import ResumeClient from "./client";
+import ChatButton from "@/components/chat-button";
 
 const skillsData = {
   "Programming & Software Design":
@@ -16,6 +17,9 @@ const skillsData = {
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-background relative">
+      {/* Floating Chat Button */}
+      <ChatButton />
+
       {/* Navbar */}
       <NavbarComponent currentPage="resume" />
 

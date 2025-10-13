@@ -23,7 +23,6 @@ import {
   TagIcon,
 } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import ChatButton from "@/components/chat-button";
 
 interface Project {
   id: string;
@@ -61,9 +60,6 @@ export default function PortfolioClient({ projectsData, categories }: PortfolioC
 
   return (
     <>
-      {/* Floating Chat Button */}
-      <ChatButton />
-
       {/* Main Content */}
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {/* Header */}
