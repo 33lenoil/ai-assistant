@@ -69,7 +69,7 @@ const photoLocations: PhotoLocation[] = [
     photoCount: 5,
     coordinates: { lat: 56.1304, lng: -106.3468 },
     flag: "🇨🇦",
-    category: "nature",
+    category: "urban",
   },
   {
     id: "chicago",
@@ -124,7 +124,7 @@ const photoLocations: PhotoLocation[] = [
     photoCount: 7,
     coordinates: { lat: 40.0583, lng: -74.4057 },
     flag: "🇺🇸",
-    category: "nature",
+    category: "urban",
   },
   {
     id: "nemours",
