@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/outline";
 import { useCallback, useEffect, useMemo, useRef, useState, memo } from "react";
 import { sendToChatAPI } from "@/lib/chat";
+import { getBlobUrl } from "@/lib/constants";
 
 const CLIENT_MESSAGE_CAP = 12; // local cap to mirror server
 
@@ -32,7 +33,7 @@ const preloadLionelImage = (): Promise<HTMLImageElement> => {
       resolve(img);
     };
     img.onerror = reject;
-    img.src = "/images/lionelhu-min.jpg";
+    img.src = getBlobUrl("images/lionelhu-min.jpg");
   });
 
   return imageLoadPromise;
@@ -72,7 +73,7 @@ const CachedAvatar = memo(({ isUser }: { isUser: boolean }) => {
         backgroundImage:
           imageLoaded && cachedLionelImage
             ? `url(${cachedLionelImage.src})`
-            : "url(/images/lionelhu-min.jpg)",
+            : `url(${getBlobUrl("images/lionelhu-min.jpg")})`,
       }}
     />
   );

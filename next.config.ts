@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
         port: "",
         pathname: "/badge/**",
       },
+      {
+        protocol: "https",
+        hostname: "yuhyk3zjlcchwpep.public.blob.vercel-storage.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",

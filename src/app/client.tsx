@@ -4,6 +4,7 @@ import { Button, Card, CardBody, Link, Chip } from "@heroui/react";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import Image from "next/image";
+import { getBlobUrl } from "@/lib/constants";
 
 interface ClientProps {
   servicesData: {
@@ -29,7 +30,7 @@ export default function Client({ servicesData, skillsData, projectHighlights }: 
             <div className="relative">
               <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-2xl">
                 <Image
-                  src="/images/lionelhu-min.jpg"
+                  src={getBlobUrl("images/lionelhu-min.jpg")}
                   alt="Professional headshot of Lionel Hu, Software Engineer and Full-Stack Developer"
                   width={160}
                   height={160}
